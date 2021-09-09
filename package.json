@@ -1,0 +1,17 @@
+{
+    "name": "yearn-protocol",
+    "version": "0.0.0",
+    "devDependencies": {
+        "prettier": "^2.3.2",
+        "prettier-plugin-solidity": "^1.0.0-beta.13",
+        "pretty-quick": "^3.1.1",
+        "solhint": "^3.3.6",
+        "solhint-plugin-prettier": "^0.0.5"
+    },
+    "scripts": {
+        "format": "prettier --write 'contracts/*.sol' --verbose",
+        "format:check": "prettier --check '**/*.*(sol|json)'",
+        "format:fix": "pretty-quick --pattern '**/*.*(sol|json)' --staged --verbose",
+        "hint": "solhint \"contracts/**/*.sol\""
+    }
+}
