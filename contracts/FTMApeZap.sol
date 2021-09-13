@@ -33,6 +33,7 @@ contract FTMApeZap {
     }
 
     function deposit() public payable {
+        require(msg.value != 0, "!value");
         wftm.deposit{value: msg.value}();
         if (wftm.allowance(address(this), address(vault)) < msg.value) {
             SafeERC20.safeApprove(wftm, address(vault), 0);
@@ -52,5 +53,5 @@ contract FTMApeZap {
         require(success, "Transfer failed.");
     }
 
-    receive() external payable;
+    receive() external payable {}
 }
